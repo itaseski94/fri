@@ -84,8 +84,7 @@ void interpretData() {
     }
 }
 
-int main()
-{
+int main() {
    readData();
    interpretData();
 
