@@ -41,20 +41,20 @@ int snakeLength(int arr[][3], int n, int num_steps) {
              snake = (int **)realloc(snake,sizeof(int *) * snake_length + 1);
              snake[snake_length] = (int *)malloc(sizeof(int) * 2);
              snake_length += 1;
-             makeMove(snake,snake_length,move_dir);
           } else if (arr[exists][2] == 2) {
-             if (move_dir == 'u') { temp_dir = 'l'; makeMove(snake,snake_length,temp_dir); }
-             else if (move_dir == 'd') { temp_dir = 'r'; makeMove(snake,snake_length,temp_dir); }
-             else if (move_dir == 'l') { temp_dir = 'd'; makeMove(snake,snake_length,temp_dir); }
-             else if (move_dir == 'r') { temp_dir = 'u'; makeMove(snake,snake_length,temp_dir); } 
+             if (move_dir == 'u') temp_dir = 'l';
+             else if (move_dir == 'd') temp_dir = 'r';
+             else if (move_dir == 'l') temp_dir = 'd'; 
+             else if (move_dir == 'r') temp_dir = 'u';
              move_dir = temp_dir;
           } else if (arr[exists][2] == 3) {
-             if (move_dir == 'u') { temp_dir = 'r'; makeMove(snake,snake_length,temp_dir); }
-             else if (move_dir == 'd') { temp_dir = 'l'; makeMove(snake,snake_length,temp_dir); }
-             else if (move_dir == 'l') { temp_dir = 'u'; makeMove(snake,snake_length,temp_dir); }
-             else if (move_dir == 'r') { temp_dir = 'd'; makeMove(snake,snake_length,temp_dir); }
+             if (move_dir == 'u') temp_dir = 'r'; 
+             else if (move_dir == 'd') temp_dir = 'l'; 
+             else if (move_dir == 'l') temp_dir = 'u'; 
+             else if (move_dir == 'r') temp_dir = 'd'; 
              move_dir = temp_dir;
           }
+          makeMove(snake,snake_length,temp_dir);
        } else {
           makeMove(snake,snake_length,move_dir); 
        }  
