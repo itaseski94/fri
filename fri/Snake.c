@@ -33,7 +33,6 @@ int snakeLength(int arr[][3], int n, int num_steps) {
    char move_dir = 'u';
    char temp_dir = '0';
    int exists;
-   
    for (int i = 1; i <= num_steps; ++i) {
        exists = contains(arr,n,snake[0][0], snake[0][1]);
        if (exists != -1) {
